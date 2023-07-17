@@ -1,0 +1,18 @@
+# This file controls the behaviour of line input editing for
+# programs that use the GNU Readline library.  Existing
+# programs include FTP, Bash, and GDB.
+#
+# You can re-read the inputrc file with C-x C-r.
+# Lines beginning with '#' are comments.
+#
+# First, include any system-wide bindings and variable
+# assignments from /etc/Inputrc
+$include /etc/inputrc
+
+$if mode=emacs
+
+Control-h: backward-kill-word
+"^[[3;5~": kill-word
+Control-k: kill-whole-line
+
+$endif
